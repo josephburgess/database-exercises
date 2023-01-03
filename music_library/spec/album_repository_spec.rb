@@ -17,7 +17,7 @@ RSpec.describe AlbumRepository do
     albums = repo.all
     expect(albums.length).to eq 2
     expect(albums[1].id).to eq '2'
-    expect(albums.first.title).to eq 'Parklife'
+    expect(albums[0].title).to eq 'Parklife'
   end
 
   it 'allows to search for individual ids' do
