@@ -16,8 +16,6 @@ class AlbumRepository
     albums
   end
 
-  # Gets a single record by its ID
-  # One argument: the id (number)
   def find(id)
     sql = 'SELECT id, title, release_year FROM albums WHERE id = $1;'
     sql_params = [id]
@@ -29,7 +27,6 @@ class AlbumRepository
     album.release_year = record['release_year']
 
     album
-    # Returns a single Student object.
   end
 
   # Add more methods below for each operation you'd like to implement.
