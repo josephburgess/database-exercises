@@ -6,5 +6,5 @@ DatabaseConnection.connect('music_library')
 album_repository = AlbumRepository.new
 
 album_repository.all.each do |album|
-  p album
+  p "#{album.id} - #{album.title} - #{album.release_year}"
 end
