@@ -13,7 +13,6 @@ class ArtistRepository
       artist.id = record['id']
       artist.name = record['name']
       artist.genre = record['genre']
-
       artists << artist
     end
     artists

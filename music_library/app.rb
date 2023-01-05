@@ -31,7 +31,8 @@ class Application
 
   def prompt_for_input
     input = prompt 'Enter your choice:'
-    if input == '1'
+    case input
+    when '1'
       show 'Here is the list of albums:'
       @album_repository.all.each do |album|
         show "* #{album.id} - #{album.title} (#{album.release_year})"
