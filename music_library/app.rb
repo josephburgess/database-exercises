@@ -39,13 +39,18 @@ class Application
     else
       show 'Here is the list of artists:'
       @artist_repository.all.each do |artist|
-        p "* #{artist.id} - #{artist.name} (#{artist.genre})"
+        show "* #{artist.id} - #{artist.name} (#{artist.genre})"
       end
     end
   end
 end
 
-# album_repository = AlbumRepository.new
-# artist_repository = ArtistRepository.new
-# app = Application.new('music_library', Kernel, album_repository, artist_repository)
-# app.run
+if __FILE__ == $0
+  app = Application.new(
+    'music_library',
+    Kernel,
+    AlbumRepository.new,
+    ArtistRepository.new
+  )
+  app.run
+end
