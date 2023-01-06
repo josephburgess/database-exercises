@@ -10,4 +10,11 @@ describe CohortRepository do
   before(:each) do
     reset_tables
   end
+
+  it 'allows the user to find cohort information with related students' do
+    repo = CohortRepository.new
+    cohort = repo.find_with_students(2)
+    expect(cohort.name).to eq 'Second'
+    expect(cohort.students.length).to eq 2
+  end
 end
