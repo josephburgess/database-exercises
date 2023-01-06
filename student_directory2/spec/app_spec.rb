@@ -18,10 +18,11 @@ describe Application do
     app = Application.new(database_name, io, cohort_repository)
     expect(io).to receive(:puts).with('Enter a cohort number:')
     expect(io).to receive(:gets).and_return('2')
-    expect(io).to receive(:puts).with('Here are the details for the First Cohort:')
-    expect(io).to receive(:puts).with('Starting date: x')
+    expect(io).to receive(:puts).with('Here are the details of the Second Cohort:')
+    expect(io).to receive(:puts).with('Starting date: 2023-05-01')
     expect(io).to receive(:puts).with('Students:')
-    expect(io).to receive(:puts).with('1. Elise')
-    expect(io).to receive(:puts).with('2. Peyman')
+    expect(io).to receive(:puts).with('1. Elise (id: 2)')
+    expect(io).to receive(:puts).with('2. Peyman (id: 5)')
     app.run
   end
+end
